@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33103.184
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "File Swaper", "File Swaper.csproj", "{DB85E583-A1D6-43F1-8C2C-858388F8180D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DB85E583-A1D6-43F1-8C2C-858388F8180D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB85E583-A1D6-43F1-8C2C-858388F8180D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB85E583-A1D6-43F1-8C2C-858388F8180D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB85E583-A1D6-43F1-8C2C-858388F8180D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1CD3AF5C-87F5-4E01-9671-AD9BE2490FE9}
+	EndGlobalSection
+EndGlobal

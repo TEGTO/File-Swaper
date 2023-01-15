@@ -1,0 +1,65 @@
+﻿<Window x:Class="File_Swaper.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:File_Swaper"
+        mc:Ignorable="d"      
+        Title="FileSwaper" Height="311" Width="400"
+        ShowInTaskbar="True"
+        ResizeMode="CanMinimize"
+        WindowStartupLocation="CenterScreen">
+
+    <DockPanel x:Name="layout">
+        <Menu DockPanel.Dock="Top"  Margin="0,0,0,254" Height="27" Background="#FFF7F7F7" FontSize="14" BorderThickness="0,1,0,9" BorderBrush="Black">
+            <MenuItem Header="  _File" FontFamily="Calibri" Width="50"  Margin="1,0,0,0"  BorderBrush="Black" BorderThickness="0,0,1,0" >
+                <MenuItem Header="_New" Click="NewFilesButton"/>
+                <MenuItem x:Name="RememberFiles" Header="_Remember Files" IsCheckable="True" IsChecked="True" StaysOpenOnClick="True" Click="RememberFilesButton"/>
+                <MenuItem x:Name="AutoReplace" Header="_Autoreplace"  IsChecked="False" StaysOpenOnClick="True" Click="AutoReplaceButton" Opacity="0.5" IsCheckable="False"/>
+                <Separator />
+                <MenuItem Header="_Exit" Click="exitFromApplication"/>
+            </MenuItem>
+
+        </Menu>
+        <Grid x:Name="layout1" Margin="0,-220,0,0" Background="Transparent" Height="250" >
+
+            <StackPanel x:Name="FirstPanel" AllowDrop="True" Drop="dragDrop" DragEnter="layout2_DragEnter" DragLeave="layout2_DragLeave" >
+
+                <Button x:Name="FirstFileButton" Content="First File..." Width="90" Height="20" Margin="45,43,0,186" HorizontalAlignment="Left" Background="#FFF7F7F7" BorderBrush="Black" FontFamily="Cambria" FontWeight="Bold" FontSize="14" Click="openFileDialog"/>
+                <ScrollViewer HorizontalScrollBarVisibility="Visible"  VerticalScrollBarVisibility="Disabled" Margin="30,-320,0,0" Height="40" Width="130" HorizontalAlignment="Left" >
+                    <StackPanel>
+
+                        <TextBox x:Name="FirstFileText" HorizontalAlignment="Left" Margin="0,0,0,0" Text="" VerticalAlignment="Top" Width="250"     VerticalScrollBarVisibility="Hidden" 
+                          HorizontalScrollBarVisibility="Hidden" TextWrapping="NoWrap" BorderBrush="{x:Null}"/>
+
+                    </StackPanel>
+
+                </ScrollViewer>
+                <Label Content="Source File" Margin="-210,-440,0,0" FontSize="15" FontFamily="Cascadia Mono" FontWeight="Bold" Height="26" Width="112" Background="#FFF7F7F7"/>
+                <Border BorderBrush="Black" BorderThickness="1,1,1,1" Margin="20,-350,0,0" Height="113" Width="150" HorizontalAlignment="Left"/>
+                <Border BorderBrush="Black" BorderThickness="1,1,1,1" Margin="30,-340,0,0" Height="18" Width="130" HorizontalAlignment="Left"/>
+            </StackPanel>
+            <StackPanel x:Name="SecondPanel"  Margin="0,0,5,0" AllowDrop="True" Drop="dragDrop" DragEnter="layout2_DragEnter" DragLeave="layout2_DragLeave">
+                <Button x:Name="SecondFileButton" Content="Second File..." Width="90" Height="20" Margin="0,43,45,186" HorizontalAlignment="Right" Background="#FFF7F7F7" BorderBrush="Black" FontFamily="Cambria" FontWeight="Bold" FontSize="14" Click="openFileDialog"/>
+                <ScrollViewer HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Disabled" Margin="0,-320,25,0" Height="40" Width="130" HorizontalAlignment="Right">
+                    <TextBox x:Name="SecondFileText" HorizontalAlignment="Left" Margin="0,0,0,0" Text="" VerticalAlignment="Top" Width="250"     VerticalScrollBarVisibility="Hidden" 
+                          HorizontalScrollBarVisibility="Hidden" TextWrapping="NoWrap" BorderBrush="{x:Null}"/>
+                </ScrollViewer>
+                <Label Content="Destination File" Margin="0,-440,14,0" FontSize="15" FontFamily="Cascadia Mono" FontWeight="Bold" HorizontalAlignment="Right" Height="26" Background="#FFF7F7F7"/>
+                <Border BorderBrush="Black" BorderThickness="1,1,1,1" Margin="0,-350,15,0" Height="113" Width="150" HorizontalAlignment="Right"/>
+                <Border BorderBrush="Black" BorderThickness="1,1,1,1" Margin="0,-340,25,0" Height="18" Width="130" HorizontalAlignment="Right"/>
+            </StackPanel>
+            <StackPanel >
+
+
+                <Button x:Name="ReplaceFilesButton" Content="Replace" Width="150" Height="40" Margin="10,150,15,0" HorizontalAlignment="Center" Background="#FFF7F7F7" BorderBrush="Black" FontFamily="Cambria" FontWeight="Bold" FontSize="24" Click="ReplaceFilesButton_Click"/>
+                <Label x:Name="ResultLabel" Content="" Margin="110,5,0,186" Width="283" FontFamily="Cascadia Mono" FontWeight="Bold" FontSize="14" />
+
+            </StackPanel>
+
+
+
+        </Grid>
+        <Label Content="File Swaper" Height="51" Width="179" Margin="-340,-460,0,0" FontFamily="Rockwell Condensed" FontSize="35" FontWeight="Bold"/>
+    </DockPanel>
+</Window>
