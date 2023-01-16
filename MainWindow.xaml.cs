@@ -179,7 +179,7 @@ namespace File_Swaper
                 secondFilePath = SecondFileText.Text;
                 if (firstFilePath == null || firstFilePath?.Length <= 0 || secondFilePath == null || secondFilePath?.Length <= 0)
                 {
-                    ResultLabel.Content = "All files paths are not entered";
+                    ResultLabel.Content = "All files paths aren't entered";
                     return;
                 }
 

@@ -7,11 +7,11 @@
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
 	<UseWindowsForms>true</UseWindowsForms>
-	<ApplicationIcon>file (1).ico</ApplicationIcon>
+	<ApplicationIcon>swap.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="file (1).ico" />
+    <Content Include="swap.ico" />
   </ItemGroup>
 
   <ItemGroup>

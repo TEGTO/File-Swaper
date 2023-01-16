@@ -35,7 +35,7 @@
                     </StackPanel>
 
                 </ScrollViewer>
-                <Label Content="Source File" Margin="-210,-440,0,0" FontSize="15" FontFamily="Cascadia Mono" FontWeight="Bold" Height="26" Width="112" Background="#FFF7F7F7"/>
+                <Label Content="Source File" Margin="-205,-440,0,0" FontSize="15" FontFamily="Cascadia Mono" FontWeight="Bold" Height="26" Width="112" Background="#FFF7F7F7"/>
                 <Border BorderBrush="Black" BorderThickness="1,1,1,1" Margin="20,-350,0,0" Height="113" Width="150" HorizontalAlignment="Left"/>
                 <Border BorderBrush="Black" BorderThickness="1,1,1,1" Margin="30,-340,0,0" Height="18" Width="130" HorizontalAlignment="Left"/>
             </StackPanel>
