@@ -11,7 +11,7 @@
         WindowStartupLocation="CenterScreen">
 
     <DockPanel x:Name="layout">
-        <Menu DockPanel.Dock="Top"  Margin="0,0,0,254" Height="27" Background="#FFF7F7F7" FontSize="14" BorderThickness="0,1,0,9" BorderBrush="Black">
+        <Menu DockPanel.Dock="Top"  Margin="0,0,0,254" Height="27" Background="#FFF7F7F7" FontSize="14" BorderThickness="0,1,0,8.7" BorderBrush="Black">
             <MenuItem Header="  _File" FontFamily="Calibri" Width="50"  Margin="1,0,0,0"  BorderBrush="Black" BorderThickness="0,0,1,0" >
                 <MenuItem Header="_New" Click="NewFilesButton"/>
                 <MenuItem x:Name="RememberFiles" Header="_Remember Files" IsCheckable="True" IsChecked="True" StaysOpenOnClick="True" Click="RememberFilesButton"/>
@@ -23,30 +23,39 @@
         </Menu>
         <Grid x:Name="layout1" Margin="0,-220,0,0" Background="Transparent" Height="250" >
 
-            <StackPanel x:Name="FirstPanel" AllowDrop="True" Drop="dragDrop" DragEnter="layout2_DragEnter" DragLeave="layout2_DragLeave" >
-
-                <Button x:Name="FirstFileButton" Content="First File..." Width="90" Height="20" Margin="45,43,0,186" HorizontalAlignment="Left" Background="#FFF7F7F7" BorderBrush="Black" FontFamily="Cambria" FontWeight="Bold" FontSize="14" Click="openFileDialog"/>
+            <StackPanel x:Name="FirstPanel" AllowDrop="True" Drop="dragDrop" DragEnter="layout2_DragEnter" DragLeave="layout2_DragLeave"  >
+                <Label Content="Source File" Margin="-200,-440,0,-500" FontSize="15" FontFamily="Cascadia Mono" FontWeight="Bold" Height="26" Width="150" HorizontalContentAlignment="Center" Background="#FFF7F7F7"/>
+                <Border BorderBrush="Black" BorderThickness="1,1,1,1" Margin="20,-350,0,-500" Height="113" Width="150" HorizontalAlignment="Left" AllowDrop="True" Drop="dragDrop" DragEnter="layout2_DragEnter" DragLeave="layout2_DragLeave"  Background="Transparent"/>
+                <Button x:Name="FirstFileButton" Content="  Click..." Width="90" Height="20" Margin="45,43,0,186" HorizontalAlignment="Left"  BorderBrush="Black" FontFamily="Cambria" FontWeight="Bold" FontSize="14" Click="openFileDialog" Background="#FFF7F7F7"/>
                 <ScrollViewer HorizontalScrollBarVisibility="Visible"  VerticalScrollBarVisibility="Disabled" Margin="30,-320,0,0" Height="40" Width="130" HorizontalAlignment="Left" >
                     <StackPanel>
 
-                        <TextBox x:Name="FirstFileText" HorizontalAlignment="Left" Margin="0,0,0,0" Text="" VerticalAlignment="Top" Width="250"     VerticalScrollBarVisibility="Hidden" 
+                        <TextBox x:Name="FirstFileText" HorizontalAlignment="Left" Margin="0,0,0,0" Text="" VerticalAlignment="Top" Width="400"     VerticalScrollBarVisibility="Hidden" 
                           HorizontalScrollBarVisibility="Hidden" TextWrapping="NoWrap" BorderBrush="{x:Null}"/>
 
                     </StackPanel>
 
                 </ScrollViewer>
-                <Label Content="Source File" Margin="-205,-440,0,0" FontSize="15" FontFamily="Cascadia Mono" FontWeight="Bold" Height="26" Width="112" Background="#FFF7F7F7"/>
-                <Border BorderBrush="Black" BorderThickness="1,1,1,1" Margin="20,-350,0,0" Height="113" Width="150" HorizontalAlignment="Left"/>
+                
+                <StackPanel Height="150" Width="200" Margin="-200,-350,0,0" AllowDrop="True" Drop="dragDrop" DragEnter="layout2_DragEnter" DragLeave="layout2_DragLeave" >
+                    <Grid Height="150" Width="200" Margin="0,0,0,0" AllowDrop="True" Drop="dragDrop" DragEnter="layout2_DragEnter" DragLeave="layout2_DragLeave" />
+                </StackPanel>
+                
                 <Border BorderBrush="Black" BorderThickness="1,1,1,1" Margin="30,-340,0,0" Height="18" Width="130" HorizontalAlignment="Left"/>
+                
             </StackPanel>
             <StackPanel x:Name="SecondPanel"  Margin="0,0,5,0" AllowDrop="True" Drop="dragDrop" DragEnter="layout2_DragEnter" DragLeave="layout2_DragLeave">
-                <Button x:Name="SecondFileButton" Content="Second File..." Width="90" Height="20" Margin="0,43,45,186" HorizontalAlignment="Right" Background="#FFF7F7F7" BorderBrush="Black" FontFamily="Cambria" FontWeight="Bold" FontSize="14" Click="openFileDialog"/>
+                <Label Content="Destination File" Margin="-200,-440,15,-500" FontSize="15" FontFamily="Cascadia Mono" FontWeight="Bold" Height="26" Width="150" HorizontalAlignment="Right" HorizontalContentAlignment="Center" Background="#FFF7F7F7"/>
+                <Border BorderBrush="Black" BorderThickness="1,1,1,1" Margin="0,-350,15,-500" Height="113" Width="150" HorizontalAlignment="Right" Background="Transparent"/>
+                <Button x:Name="SecondFileButton" Content="  Click..."  Width="90" Height="20" Margin="0,43,45,186" HorizontalAlignment="Right" Background="#FFF7F7F7" BorderBrush="Black" FontFamily="Cambria" FontWeight="Bold" FontSize="14" Click="openFileDialog"/>
                 <ScrollViewer HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Disabled" Margin="0,-320,25,0" Height="40" Width="130" HorizontalAlignment="Right">
-                    <TextBox x:Name="SecondFileText" HorizontalAlignment="Left" Margin="0,0,0,0" Text="" VerticalAlignment="Top" Width="250"     VerticalScrollBarVisibility="Hidden" 
+                    <TextBox x:Name="SecondFileText" HorizontalAlignment="Left" Margin="0,0,0,0" Text="" VerticalAlignment="Top" Width="400"     VerticalScrollBarVisibility="Hidden" 
                           HorizontalScrollBarVisibility="Hidden" TextWrapping="NoWrap" BorderBrush="{x:Null}"/>
                 </ScrollViewer>
-                <Label Content="Destination File" Margin="0,-440,14,0" FontSize="15" FontFamily="Cascadia Mono" FontWeight="Bold" HorizontalAlignment="Right" Height="26" Background="#FFF7F7F7"/>
-                <Border BorderBrush="Black" BorderThickness="1,1,1,1" Margin="0,-350,15,0" Height="113" Width="150" HorizontalAlignment="Right"/>
+                
+                <StackPanel Height="150" Width="200" Margin="0,-350,-200,0"  AllowDrop="True" Drop="dragDrop" DragEnter="layout2_DragEnter" DragLeave="layout2_DragLeave" >
+                    <Grid Height="150" Width="200" Margin="0,0,0,0" AllowDrop="True" Drop="dragDrop" DragEnter="layout2_DragEnter" DragLeave="layout2_DragLeave" />
+                </StackPanel>
                 <Border BorderBrush="Black" BorderThickness="1,1,1,1" Margin="0,-340,25,0" Height="18" Width="130" HorizontalAlignment="Right"/>
             </StackPanel>
             <StackPanel >
