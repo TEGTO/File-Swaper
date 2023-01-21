@@ -2,6 +2,7 @@
 using System;
 using System.IO;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Shapes;
 using DragEventArgs = System.Windows.DragEventArgs;
@@ -140,19 +141,27 @@ namespace File_Swaper
             string name = obj.GetValue(NameProperty) as string;
             return name;
         }
+        private void TextBox_DragEnter(object sender, DragEventArgs e)
+        {
+            
+                ResultLabel.Content = "fff";
+                TextBox tx = sender as TextBox;
+                tx.IsHitTestVisible = false;
+           
+        }
         private void layout2_DragEnter(object sender, DragEventArgs e)
         {
-
-
+          
+           
           
             if (defineSender(sender) == "FirstPanel")
             {
                 ResultLabel.Content = "First file. Drop it!";
                 FirstPanel.Opacity = 0.5;
                 FirstFileButton.Opacity = 0.5;
-
                 SecondPanel.Opacity = 1;
                 SecondFileButton.Opacity = 1;
+                FirstFileText.IsHitTestVisible = false;
             }
             else
             {
@@ -161,6 +170,7 @@ namespace File_Swaper
                 FirstFileButton.Opacity = 1;
                 SecondPanel.Opacity = 0.5;
                 SecondFileButton.Opacity = 0.5;
+               SecondFileText.IsHitTestVisible = false;
             }
         }
 
@@ -199,11 +209,14 @@ namespace File_Swaper
         }
         private void layout2_DragLeave(object sender, DragEventArgs e)
         {
+            FirstFileText.IsHitTestVisible = true;
+            SecondFileText.IsHitTestVisible = false;
             FirstPanel.Opacity = 1;
             FirstFileButton.Opacity = 1;
             SecondPanel.Opacity = 1;
             SecondFileButton.Opacity = 1;
             ResultLabel.Content = "";
+            
         }
         private void NewFilesButton (object sender, RoutedEventArgs e)
         {

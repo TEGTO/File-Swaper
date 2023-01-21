@@ -30,7 +30,7 @@
                 <ScrollViewer HorizontalScrollBarVisibility="Visible"  VerticalScrollBarVisibility="Disabled" Margin="30,-320,0,0" Height="40" Width="130" HorizontalAlignment="Left" >
                     <StackPanel>
 
-                        <TextBox x:Name="FirstFileText" HorizontalAlignment="Left" Margin="0,0,0,0" Text="" VerticalAlignment="Top" Width="400"     VerticalScrollBarVisibility="Hidden" 
+                        <TextBox x:Name="FirstFileText" HorizontalAlignment="Left" Margin="0,0,0,0" Text="" VerticalAlignment="Top" Width="400"     VerticalScrollBarVisibility="Hidden" IsHitTestVisible="True" DragEnter="layout2_DragEnter" DragLeave="layout2_DragLeave"
                           HorizontalScrollBarVisibility="Hidden" TextWrapping="NoWrap" BorderBrush="{x:Null}"/>
 
                     </StackPanel>
